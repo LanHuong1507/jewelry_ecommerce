@@ -1,6 +1,6 @@
 <?php include '../jewelry-ecommerce/assets/includes/header.php'; ?>
 <?php include '../jewelry-ecommerce/assets/includes/navigation.php'; ?>
-<link rel="stylesheet" href="assets/css/styles.css">
+
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
@@ -16,17 +16,18 @@
         <h2>Featured Products</h2>
         <div class="product-grid">
             <?php
-            include 'db_connect.php';
-            $sql = "SELECT * FROM products LIMIT 3";
+            include '../jewelry-ecommerce/db_connect.php'; // Ensure correct path
+
+            $sql = "SELECT * FROM products ORDER BY RAND() LIMIT 10";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='product-card'>";
-                    echo "<img src='assets/images/" . $row["image"] . "' alt='" . $row["name"] . "'>";
-                    echo "<h3>" . $row["name"] . "</h3>";
-                    echo "<p>$" . $row["price"] . "</p>";
-                    echo "<a href='pages/products.php' class='btn btn-secondary'>View Details</a>";
+                    echo "<img src='../jewelry-ecommerce/assets/images/" . htmlspecialchars($row["image"]) . "' alt='" . htmlspecialchars($row["name"]) . "' class='product-image'>";
+                    echo "<h3>" . htmlspecialchars($row["name"]) . "</h3>";
+                    echo "<p>$" . htmlspecialchars($row["price"]) . "</p>";
+                    echo "<a href='pages/products.php?product_id=" . htmlspecialchars($row["id"]) . "' class='btn btn-view'>View Details <i class='fas fa-arrow-right'></i></a>";
                     echo "</div>";
                 }
             } else {
@@ -39,21 +40,21 @@
     </div>
 </section>
 
-<!-- About Us Section -->
+<!-- About Us Section (Preview) -->
 <section class="about-us">
     <div class="container">
         <h2>About Us</h2>
-        <p>We are passionate about providing high-quality jewelry that enhances your style and expresses your unique personality.</p>
-        <a href="pages/about.php" class="btn btn-primary">Learn More</a>
+        <p>We are passionate about providing high-quality jewelry that enhances your style and expresses your unique personality. Our team of experts carefully curates each piece to ensure exceptional craftsmanship and timeless elegance.</p>
+        <a href="assets/pages/contact.php" class="btn btn-primary"><i class="fas fa-info-circle"></i> Learn More </a>
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section (Preview) -->
 <section class="contact">
     <div class="container">
         <h2>Get in Touch</h2>
-        <p>Have questions or need assistance? Feel free to reach out to us.</p>
-        <a href="pages/contact.php" class="btn btn-primary">Contact Us</a>
+        <p>Have questions or need assistance? Feel free to reach out to us through any of the following methods. We are here to help and ensure your experience with us is exceptional.</p>
+        <a href="assets/pages/contact.php" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
     </div>
 </section>
 

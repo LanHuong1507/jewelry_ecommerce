@@ -1,6 +1,5 @@
-<?php include '../includes/header.php'; ?>
-<?php include '../includes/navigation.php'; ?>
-<?php include '../db_connect.php'; ?>
+<?php include '../jewelry-ecommerce/assets/includes/header.php'; ?>
+<?php include '../jewelry-ecommerce/assets/includes/navigation.php'; ?>
 
 <div class="container">
     <h1>Our Products</h1>
@@ -25,4 +24,4 @@
     ?>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../jewelry-ecommerce/assets/includes/footer.php'; ?>
