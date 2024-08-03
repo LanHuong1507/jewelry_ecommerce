@@ -1,6 +1,6 @@
-<?php include '../includes/header.php'; ?>
 <?php include '../includes/navigation.php'; ?>
-<link rel="stylesheet" href="../assets/css/about.css">
+<link rel="stylesheet" href="http://localhost/jewelry-ecommerce/assets/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <!-- About Us Full Content -->
 <section class="about-us-full">
     <div class="container">
